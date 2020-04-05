@@ -25,12 +25,15 @@ router.post("/register", (req, res) => {
     return res.status(400).json(errors);
   }
 
-  User.findOne({ email: req.body.email }).then(user => {
+  console.log("I am here");
+
+  User.findOne({ phonenumber: req.body.phonenumber }).then(user => {
     if (user) {
-      return res.status(400).json({ email: "Email already exists" });
+      return res.status(400).json({ email: "Phone Number already exists" });
     } else {
       const newUser = new User({
         name: req.body.name,
+        phonenumber: req.body.phonenumber,
         email: req.body.email,
         password: req.body.password
       });
@@ -62,15 +65,15 @@ router.post("/login", (req, res) => {
   if (!isValid) {
     return res.status(400).json(errors);
   }
-
+  const phonenumber = req.body.phonenumber;
   const email = req.body.email;
   const password = req.body.password;
 
-  // Find user by email
-  User.findOne({ email }).then(user => {
+  // Find user by phonenumber
+  User.findOne({ phonenumber }).then(user => {
     // Check if user exists
     if (!user) {
-      return res.status(404).json({ emailnotfound: "Email not found" });
+      return res.status(404).json({ phonenumbernotfound: "Email not found" });
     }
 
     // Check password

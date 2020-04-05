@@ -9,7 +9,7 @@ class Login extends Component {
   constructor() {
     super();
     this.state = {
-      email: "",
+      phonenumber: "",
       password: "",
       errors: {}
     };
@@ -42,7 +42,7 @@ class Login extends Component {
     e.preventDefault();
 
     const userData = {
-      email: this.state.email,
+      phonenumber: this.state.phonenumber,
       password: this.state.password
     };
 
@@ -72,18 +72,18 @@ class Login extends Component {
               <div className="input-field col s12">
                 <input
                   onChange={this.onChange}
-                  value={this.state.email}
-                  error={errors.email}
-                  id="email"
-                  type="email"
+                  value={this.state.phonenumber}
+                  error={errors.phonenumber}
+                  id="phonenumber"
+                  //type="email"
                   className={classnames("", {
-                    invalid: errors.email || errors.emailnotfound
+                    invalid: errors.phonenumber || errors.phonenumbernotfound
                   })}
                 />
-                <label htmlFor="email">Email</label>
+                <label>Phone Number</label>
                 <span className="red-text">
-                  {errors.email}
-                  {errors.emailnotfound}
+                  {errors.phonenumber}
+                  {errors.phonenumbernotfound}
                 </span>
               </div>
               <div className="input-field col s12">
@@ -136,7 +136,4 @@ const mapStateToProps = state => ({
   errors: state.errors
 });
 
-export default connect(
-  mapStateToProps,
-  { loginUser }
-)(Login);
+export default connect(mapStateToProps, { loginUser })(Login);

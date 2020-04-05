@@ -1,31 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://scripts.sirv.com/sirv.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>VabGO</title>
-  </head>
-  <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <div id="root"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <div class="row">
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
+class Collections extends Component {
+  render() {
+    return (
+      <div class="row">
         <div class="col s12 m3">
           <div class="card">
             <div class="card-image medium">
               <span class="new badge blue" data-badge-caption="Items">
                 8
               </span>
-              <a href="usedmachinery.html">
+              <Link to="/usedmachinery">
                 <img
                   class="Sirv"
                   data-src="https://omatchar.sirv.com/Images/usedmachinery.jpg"
@@ -34,7 +20,7 @@
                 <span class="card-title blue">
                   <b>Used Machinery</b>
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -44,7 +30,7 @@
               <span class="new badge blue" data-badge-caption="Items">
                 3
               </span>
-              <a href="warehouse.html">
+              <Link to="/warehouse">
                 <img
                   class="Sirv"
                   data-src="https://omatchar.sirv.com/Images/warehouse.jpeg"
@@ -53,7 +39,7 @@
                 <span class="card-title blue">
                   <b>Warehouses</b>
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -63,7 +49,7 @@
               <span class="new badge blue" data-badge-caption="Items">
                 2
               </span>
-              <a href="commercialspace.html">
+              <Link to="/commericalspace">
                 <img
                   class="Sirv"
                   data-src="https://omatchar.sirv.com/Images/commericalspace.jpg"
@@ -72,7 +58,7 @@
                 <span class="card-title blue">
                   <b>Commercial Space</b>
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -82,7 +68,7 @@
               <span class="new badge blue" data-badge-caption="Items">
                 6
               </span>
-              <a href="agri.html">
+              <Link to="/agri">
                 <img
                   class="Sirv"
                   data-src="https://omatchar.sirv.com/Images/farmland2.jpg"
@@ -91,10 +77,13 @@
                 <span class="card-title blue">
                   <b>Agricultural Land & Produce</b>
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
       </div>
-  </body>
-</html>
+    );
+  }
+}
+
+export default Collections;
