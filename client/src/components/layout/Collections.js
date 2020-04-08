@@ -69,13 +69,9 @@ class Collections extends Component {
                 6
               </span>
               <Link to="/agri">
-                <img
-                  class="Sirv"
-                  data-src="https://omatchar.sirv.com/Images/farmland2.jpg"
-                  alt=""
-                />
+                <img class="Sirv" data-src="https://omatchar.sirv.com/Images/BusinessandFranchises.jpg" alt="" />
                 <span class="card-title blue">
-                  <b>Agricultural Land & Produce</b>
+                  <b>Business & Franchise</b>
                 </span>
               </Link>
             </div>
